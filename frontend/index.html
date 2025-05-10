@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pine Hospital</title>
+    <link rel="stylesheet" href="/frontend/css/index.css">
+</head>
+<body>
+    <!-- login/sign up -->
+
+    <div class="cont_principal">
+
+        <div class="cont_centrar">
+        <div class="cont_login">
+          <form action="#">
+          <div class="cont_tabs_login">
+            <ul class='ul_tabs'>
+              <li class="active"><a href="#" onclick="sign_in(event)">SIGN IN</a>
+              <span class="linea_bajo_nom"></span>
+              </li>
+              <li><a href="#up" onclick="sign_up(event)">SIGN UP</a><span class="linea_bajo_nom"></span>
+              </li>
+            </ul>
+            </div>
+     <div class="cont_text_inputs">
+          <input type="text" class="input_form_sign " placeholder="NAME" name="name_us" required />
+          
+          <input type="text" class="input_form_sign d_block active_inp" placeholder="EMAIL" name="email_us" required />
+      
+          <input type="password" class="input_form_sign d_block  active_inp" placeholder="PASSWORD" name="pass_us" required />  
+          <input type="password" class="input_form_sign" placeholder="CONFIRM PASSWORD" name="conf_pass_us" />
+          
+          <a href="#" class="link_forgot_pass d_block" >Forgot Password ?</a>    
+      <div class="terms_and_cons d_none">
+          <input type="checkbox" name="terms_and_cons" /> <label for="terms_and_cons">Accept  Terms and Conditions.</label>
+        
+          </div>
+            </div>
+            <div class="error-message"></div><!-- ✅ ERROR MESSAGE  HERE -->
+
+      <div class="cont_btn">
+           <button class="btn_sign" type="submit">SIGN IN</button>
+            
+            </div>
+            
+          </form>
+          </div>
+          
+        </div>    
+      </div>
+      <script src="/frontend/js/index.js"></script>
+</body>
+</html>
