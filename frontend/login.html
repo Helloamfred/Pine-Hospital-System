@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pine Hospital</title>
+  <link rel="stylesheet" href="/frontend/css/login.css" />
+</head>
+<body>
+  <div class="cont_principal">
+    <div class="cont_centrar cent_active">
+      <div class="cont_login">
+        <form id="loginForm">
+          <div class="cont_tabs_login">
+            <ul class="ul_tabs">
+              <li class="active">
+                <a href="#">SIGN IN</a>
+                <span class="linea_bajo_nom"></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cont_text_inputs">
+            <input type="text" class="input_form_sign d_block active_inp" placeholder="EMAIL" name="email_us" required />
+            <input type="password" class="input_form_sign d_block active_inp" placeholder="PASSWORD" name="pass_us" required id="password" />
+            <!-- Eye icon to toggle password visibility -->
+            <span id="togglePassword" class="eye-icon">&#128065;</span>  
+           </div>
+          
+         
+          
+
+          <!-- Terms and Conditions Placeholder -->
+          <div class="terms_and_cons">
+            <input type="checkbox" id="agreeTerms" required />
+            <label for="agreeTerms">
+              I agree to the <a href="/frontend/terms.html">Terms and Conditions</a>.
+            </label>
+          </div>
+          <div class="terms-error error-message"></div>
+
+          <!-- Forgot Password link -->
+          <a href="#" class="link_forgot_pass d_block">Forgot Password ?</a>
+
+          <div class="error-message"></div>
+
+          <div class="cont_btn">
+            <button class="btn_sign" type="submit" id="submitBtn" disabled>SIGN IN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Password Reset Modal -->
+  <div id="resetModal" class="reset_modal d_none">
+    <div class="reset_content">
+      <h2>Reset Password</h2>
+      <p>Enter your email / phone number to receive a password reset link:</p>
+      <input type="text" class="input_form_sign" id="reset_email" placeholder="Enter your email or phone number" required />
+      <div class="reset_error"></div>
+      <div class="reset_btns">
+        <button onclick="submitResetRequest()">Send Link</button>
+        <button onclick="closeResetModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2FA Modal -->
+  <div id="twoFAModal" class="reset_modal d_none">
+    <div class="reset_content">
+      <h2>Two-Factor Authentication</h2>
+      <p>Enter the 6-digit code sent to your email:</p>
+      <input type="text" class="input_form_sign" id="twofa_code" placeholder="Enter code" required />
+      <div class="reset_error"></div>
+      <div class="reset_btns">
+        <button onclick="submit2FACode()">Submit</button>
+        <button onclick="closeTwoFAModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/frontend/js/login.js"></script>
+</body>
+</html>
