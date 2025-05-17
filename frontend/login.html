@@ -10,7 +10,7 @@
   <div class="cont_principal">
     <div class="cont_centrar cent_active">
       <div class="cont_login">
-        <form id="loginForm">
+        <form id="loginForm" method="POST">
           <div class="cont_tabs_login">
             <ul class="ul_tabs">
               <li class="active">
@@ -21,7 +21,7 @@
           </div>
 
           <div class="cont_text_inputs">
-            <input type="text" class="input_form_sign d_block active_inp" placeholder="EMAIL" name="email_us" required />
+            <input type="text" class="input_form_sign d_block active_inp" placeholder="EMAIL" name="login_email" required />
             <input type="password" class="input_form_sign d_block active_inp" placeholder="PASSWORD" name="pass_us" required id="password" />
             <!-- Eye icon to toggle password visibility -->
             <span id="togglePassword" class="eye-icon">&#128065;</span>  
@@ -79,7 +79,7 @@
       </div>
     </div>
   </div>
-
+  
   <script src="/frontend/js/login.js"></script>
 </body>
 </html>
