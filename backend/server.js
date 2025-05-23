@@ -51,9 +51,9 @@ const db = mysql.createConnection({
     const { login_email, pass_us } = req.body;
     console.log('Login attempt:', login_email);
   
-    const query = 'SELECT * FROM users WHERE email = ?';
+    const query = 'SELECT * FROM users WHERE email = ? AND  password = ?';
   
-    db.query(query, [login_email], (err, results) => {
+    db.query(query, [login_email, pass_us], (err, results) => {
       if (err) {
         console.error('Database error:', err);
         return res.status(500).json({ message: 'Database error' });

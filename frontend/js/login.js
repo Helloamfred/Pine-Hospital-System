@@ -247,6 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Sending credentials:", email, password);
 
+    
+
     // Validation
     if (!emailPattern.test(email)) {
       errorMessage.textContent = "Please enter a valid email address.";
