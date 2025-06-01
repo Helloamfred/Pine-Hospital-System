@@ -3,6 +3,7 @@ const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 // const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
 
@@ -15,6 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
+
 
 
 // DB Connection
@@ -35,18 +37,21 @@ const db = mysql.createConnection({
   });
 
 
+       // Serve static files from ../frontend
+      app.use(express.static(path.join(__dirname, '..', 'frontend')));
 
-  const path = require('path');
+      // Root route serves index.html
+      app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
+      });
 
-  // Serve frontend from public directory
-  app.use(express.static(path.join(__dirname, 'frontend')));
-
-  // Fetch users Route 
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'frontend', 'login.html'));
-  });
+      // Route to serve login.html directly
+      app.get('/login', (req, res) => {
+        res.sendFile(path.join(__dirname, '..', 'frontend', 'login.html'));
+      });
 
 
+  //   Login API route
   app.post('/login', (req, res) => {
     const { login_email, pass_us } = req.body;
     console.log('Login attempt:', login_email);
